@@ -1,0 +1,299 @@
+body {
+    display: flex;
+    justify-content: center !important;
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center !important;
+    background-image: url(./assets/img_pollo_locco/5_background/Background_El_Pollo_Loco.jpg);
+    background-size: 100vw, 100vh;
+    height: 100vh;
+    background-position: center;
+    object-fit: cover;
+    font-family: "zabras", Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+canvas {
+    background-color: black;
+    display: block;
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+@font-face {
+    font-family: "zabras";
+    src: url("./fonts/zabars.ttf") format("truetype");
+}
+
+.startScreen,
+.winGame,
+.gameOver {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restartButton {
+    display: none;
+}
+
+.playButton,
+.restartButton {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: rgb(255, 211, 15);
+    border-color: rgb(9, 158, 201);
+    color: black;
+    font-size: 28px;
+    font-family: "zabras", Arial, Helvetica, sans-serif;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.playButton:hover,
+.restartButton:hover {
+    border-color: black;
+    background-color: rgb(9, 158, 201);
+}
+
+.canvasContainer {
+    position: relative;
+    width: 720px;
+    height: 480px;
+    z-index: 1;
+}
+
+.fullscreenToggle {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    height: 32px;
+}
+
+.audioIconCanvas {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    cursor: pointer;
+    height: 32px;
+    display: inline;
+}
+
+.gameInformationContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    background-color: rgb(9, 158, 201);
+    width: 720px;
+    height: 100px;
+    z-index: 100;
+}
+
+.gameInformationPosition,
+.gameInformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+}
+
+.gameInformation {
+    cursor: pointer;
+}
+
+.gameInformationIcons {
+    height: 48px;
+}
+
+.infoPopup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.closeButton {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.infoContent {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.infoContent p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.infoContent img {
+    display: flex;
+    justify-content: flex-end;
+    height: 24px;
+    cursor: pointer;
+}
+
+.legalNoticeContainer {
+    margin-top: 24px;
+}
+
+.legalNotice {
+    text-decoration: none;
+    color: black;
+}
+
+#portraitWarning {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    z-index: 100;
+    padding: 0 16px;
+    font-size: 36px;
+    font-family: "Boogaloo";
+    text-transform: uppercase;
+}
+
+#portraitWarning span {
+    font-size: 80px;
+    animation: rotateIcon 2s forwards;
+}
+
+.rotateDevice {
+    width: 80px;
+    height: auto;
+    animation: rotateIcon 2s forwards;
+}
+
+#mobileGame {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    flex-direction: row;
+}
+
+.mobileButtons,
+.mobileButtonsImages {
+    display: none;
+}
+
+@keyframes rotateIcon {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .fullscreenToggle,
+    .audioIconCanvas {
+        display: block;
+        position: fixed;
+        bottom: 5px;
+        right: 10px;
+        z-index: 100;
+    }
+
+    .audioIconCanvas {
+        right: 50px;
+    }
+
+    .canvasContainer {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .gameInformationContainer,
+    .legalNoticeContainer {
+        display: none;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    .mobileButtons {
+        display: flex;
+        cursor: pointer;
+        border-radius: 12px;
+        height: 48px;
+        width: 48px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .mobileButtonsImages {
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+
+    .mobileGameWrapper {
+        display: flex;
+        gap: 8px;
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    canvas,
+    .canvasContainer {
+        height: 100vh;
+    }
+}

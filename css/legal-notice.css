@@ -1,0 +1,44 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 24px;
+    background-image: url(../assets/img_pollo_locco/5_background/Background_El_Pollo_Loco_Legal_Notice.jpg);
+    background-size: 100vw, 100vh;
+    background-position: center;
+    object-fit: contain;
+    color: yellow;
+    margin: 12px 120px;
+}
+
+p, 
+li {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    color: black;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.homeIcon {
+    height: 32px;
+}
+
+.legalNoticePosition {
+    text-align: center;
+}
+
+ul {
+    list-style-position: inside; 
+    text-align: center; 
+}
+
+@font-face {
+    font-family: 'zabras';
+    src: url('../fonts/zabars.ttf') format('truetype'); 
+}  
+
